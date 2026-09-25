@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import QRCode from "qrcode";
 
 interface ApkDownloadModalProps {
   isOpen: boolean;
@@ -12,6 +13,50 @@ export default function ApkDownloadModal({ isOpen, onClose }: ApkDownloadModalPr
   const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
   const [isInstalled, setIsInstalled] = useState(false);
   const [downloadStarted, setDownloadStarted] = useState(false);
+  const [qrMode, setQrMode] = useState<"portal" | "apk">("portal");
+  const [qrDataUrl, setQrDataUrl] = useState<string>("");
+  const [copied, setCopied] = useState(false);
+  const [currentOrigin, setCurrentOrigin] = useState("https://okultakip.vercel.app");
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.location.origin) {
+      setCurrentOrigin(window.location.origin);
+    }
+  }, []);
+
+  const qrTargetUrl = qrMode === "portal"
+    ? currentOrigin
+    : `${currentOrigin}/downloads/maarif-lms-v2026.apk`;
+
+  useEffect(() => {
+    let isMounted = true;
+    QRCode.toDataURL(qrTargetUrl, {
+      width: 280,
+      margin: 2,
+      errorCorrectionLevel: "H",
+      color: {
+        dark: "#102444",
+        light: "#ffffff",
+      },
+    })
+      .then((url) => {
+        if (isMounted) setQrDataUrl(url);
+      })
+      .catch((err) => {
+        console.error("QR Code Error:", err);
+      });
+    return () => {
+      isMounted = false;
+    };
+  }, [qrTargetUrl]);
+
+  const handleCopyLink = () => {
+    if (typeof navigator !== "undefined" && navigator.clipboard) {
+      navigator.clipboard.writeText(qrTargetUrl);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2500);
+    }
+  };
 
   useEffect(() => {
     const handleBeforeInstallPrompt = (e: any) => {
@@ -296,11 +341,11 @@ export default function ApkDownloadModal({ isOpen, onClose }: ApkDownloadModalPr
                 >
                   <div style={{ background: "#ffffff", padding: "0.5rem 0.75rem", borderRadius: "8px", border: "1px solid var(--md-cream-border)" }}>
                     <div style={{ color: "var(--md-text-muted)", fontSize: "0.7rem" }}>Boyut</div>
-                    <strong>14.2 MB</strong>
+                    <strong>5.2 MB (Tam Sürüm)</strong>
                   </div>
                   <div style={{ background: "#ffffff", padding: "0.5rem 0.75rem", borderRadius: "8px", border: "1px solid var(--md-cream-border)" }}>
                     <div style={{ color: "var(--md-text-muted)", fontSize: "0.7rem" }}>Gereksinim</div>
-                    <strong>Android 8.0+</strong>
+                    <strong>Android 7.0 - 15</strong>
                   </div>
                   <div style={{ background: "#ffffff", padding: "0.5rem 0.75rem", borderRadius: "8px", border: "1px solid var(--md-cream-border)" }}>
                     <div style={{ color: "var(--md-text-muted)", fontSize: "0.7rem" }}>Sürüm</div>
@@ -486,64 +531,191 @@ export default function ApkDownloadModal({ isOpen, onClose }: ApkDownloadModalPr
           {/* TAB 3: QR Kodu */}
           {activeTab === "qr" && (
             <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "1rem", textAlign: "center" }}>
-              <p style={{ fontSize: "0.85rem", color: "var(--md-text-secondary)", maxWidth: "420px" }}>
-                Telefonunuzun kamerasını aşağıdaki QR koda tutarak Maarif LMS portalını cep telefonunuzda anında açabilir ve APK indirebilirsiniz.
+              <p style={{ fontSize: "0.85rem", color: "var(--md-text-secondary)", maxWidth: "460px", margin: 0 }}>
+                Telefonunuzun veya tabletinizin kamerasını karekoda tutarak Maarif LMS portalına anında erişebilir veya APK dosyasını indirebilirsiniz.
               </p>
 
-              {/* SVG QR Code */}
+              {/* QR Modu Seçimi: Portal vs APK */}
+              <div
+                style={{
+                  display: "flex",
+                  gap: "0.5rem",
+                  background: "var(--md-cream-surface)",
+                  padding: "0.3rem",
+                  borderRadius: "10px",
+                  border: "1px solid var(--md-cream-border)",
+                }}
+              >
+                <button
+                  type="button"
+                  onClick={() => setQrMode("portal")}
+                  style={{
+                    padding: "0.45rem 0.9rem",
+                    borderRadius: "8px",
+                    border: "none",
+                    background: qrMode === "portal" ? "var(--md-navy-primary)" : "transparent",
+                    color: qrMode === "portal" ? "#ffffff" : "var(--md-text-secondary)",
+                    fontSize: "0.78rem",
+                    fontWeight: 700,
+                    cursor: "pointer",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "0.35rem",
+                    transition: "all 0.2s",
+                  }}
+                >
+                  <span>🌐</span>
+                  <span>Maarif Portalı</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setQrMode("apk")}
+                  style={{
+                    padding: "0.45rem 0.9rem",
+                    borderRadius: "8px",
+                    border: "none",
+                    background: qrMode === "apk" ? "var(--md-navy-primary)" : "transparent",
+                    color: qrMode === "apk" ? "#ffffff" : "var(--md-text-secondary)",
+                    fontSize: "0.78rem",
+                    fontWeight: 700,
+                    cursor: "pointer",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "0.35rem",
+                    transition: "all 0.2s",
+                  }}
+                >
+                  <span>⬇️</span>
+                  <span>APK İndirme Linki</span>
+                </button>
+              </div>
+
+              {/* Gerçek ve Eksiksiz QR Kod Kartı */}
               <div
                 style={{
                   padding: "1rem",
                   background: "#ffffff",
-                  borderRadius: "16px",
-                  border: "2px solid var(--md-navy-primary)",
-                  boxShadow: "var(--md-elevation-2)",
-                  display: "inline-block",
+                  borderRadius: "18px",
+                  border: "2.5px solid var(--md-navy-primary)",
+                  boxShadow: "0 10px 25px -5px rgba(18, 38, 70, 0.15)",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  position: "relative",
                 }}
               >
-                <svg width="180" height="180" viewBox="0 0 100 100" style={{ display: "block" }}>
-                  {/* Background */}
-                  <rect width="100" height="100" fill="#ffffff" />
+                {qrDataUrl ? (
+                  <img
+                    src={qrDataUrl}
+                    alt="Maarif LMS Gerçek Karekod"
+                    style={{
+                      width: "210px",
+                      height: "210px",
+                      display: "block",
+                      borderRadius: "8px",
+                    }}
+                  />
+                ) : (
+                  <div
+                    style={{
+                      width: "210px",
+                      height: "210px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      color: "var(--md-text-muted)",
+                      fontSize: "0.85rem",
+                    }}
+                  >
+                    <span>Karekod oluşturuluyor...</span>
+                  </div>
+                )}
 
-                  {/* Corner Target 1 (Top-Left) */}
-                  <rect x="10" y="10" width="24" height="24" fill="#122646" rx="3" />
-                  <rect x="14" y="14" width="16" height="16" fill="#ffffff" rx="1.5" />
-                  <rect x="17" y="17" width="10" height="10" fill="#c6923b" rx="1" />
-
-                  {/* Corner Target 2 (Top-Right) */}
-                  <rect x="66" y="10" width="24" height="24" fill="#122646" rx="3" />
-                  <rect x="70" y="14" width="16" height="16" fill="#ffffff" rx="1.5" />
-                  <rect x="73" y="17" width="10" height="10" fill="#c6923b" rx="1" />
-
-                  {/* Corner Target 3 (Bottom-Left) */}
-                  <rect x="10" y="66" width="24" height="24" fill="#122646" rx="3" />
-                  <rect x="14" y="70" width="16" height="16" fill="#ffffff" rx="1.5" />
-                  <rect x="17" y="73" width="10" height="10" fill="#c6923b" rx="1" />
-
-                  {/* Random QR Grid Pattern */}
-                  <rect x="38" y="12" width="6" height="6" fill="#122646" />
-                  <rect x="48" y="12" width="6" height="6" fill="#122646" />
-                  <rect x="38" y="22" width="6" height="6" fill="#122646" />
-                  <rect x="52" y="22" width="6" height="6" fill="#c6923b" />
-                  <rect x="44" y="32" width="6" height="6" fill="#122646" />
-                  <rect x="20" y="44" width="6" height="6" fill="#122646" />
-                  <rect x="32" y="44" width="6" height="6" fill="#c6923b" />
-                  <rect x="44" y="44" width="12" height="12" fill="#122646" rx="2" />
-                  <rect x="62" y="44" width="6" height="6" fill="#122646" />
-                  <rect x="74" y="44" width="6" height="6" fill="#c6923b" />
-                  <rect x="12" y="54" width="6" height="6" fill="#c6923b" />
-                  <rect x="38" y="58" width="6" height="6" fill="#122646" />
-                  <rect x="48" y="64" width="6" height="6" fill="#122646" />
-                  <rect x="60" y="58" width="6" height="6" fill="#122646" />
-                  <rect x="70" y="66" width="6" height="6" fill="#122646" />
-                  <rect x="80" y="74" width="6" height="6" fill="#c6923b" />
-                  <rect x="64" y="78" width="6" height="6" fill="#122646" />
-                  <rect x="76" y="82" width="6" height="6" fill="#122646" />
-                </svg>
+                <div
+                  style={{
+                    marginTop: "0.6rem",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "0.35rem",
+                    background: "rgba(18, 38, 70, 0.06)",
+                    padding: "0.25rem 0.65rem",
+                    borderRadius: "6px",
+                    fontSize: "0.72rem",
+                    fontWeight: 700,
+                    color: "var(--md-navy-primary)",
+                  }}
+                >
+                  <span>{qrMode === "portal" ? "🌐 Portal Girişi" : "📦 Doğrudan APK İndir"}</span>
+                  <span>•</span>
+                  <span>Tam Uyumlu</span>
+                </div>
               </div>
 
-              <div style={{ fontSize: "0.8rem", color: "var(--md-navy-primary)", fontWeight: 700 }}>
-                📱 Kamerayı yaklaştırın • Doğrudan açın
+              {/* Bağlantı Kutusu & Kopyalama */}
+              <div
+                style={{
+                  width: "100%",
+                  maxWidth: "460px",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "0.5rem",
+                  background: "var(--md-cream-surface)",
+                  padding: "0.4rem 0.6rem",
+                  borderRadius: "10px",
+                  border: "1px solid var(--md-cream-border)",
+                }}
+              >
+                <input
+                  type="text"
+                  readOnly
+                  value={qrTargetUrl}
+                  style={{
+                    flex: 1,
+                    background: "transparent",
+                    border: "none",
+                    outline: "none",
+                    fontSize: "0.75rem",
+                    color: "var(--md-navy-primary)",
+                    fontFamily: "monospace",
+                    textOverflow: "ellipsis",
+                  }}
+                />
+                <button
+                  type="button"
+                  onClick={handleCopyLink}
+                  style={{
+                    background: copied ? "var(--status-present)" : "var(--md-navy-primary)",
+                    color: "#ffffff",
+                    border: "none",
+                    padding: "0.35rem 0.75rem",
+                    borderRadius: "6px",
+                    fontSize: "0.75rem",
+                    fontWeight: 700,
+                    cursor: "pointer",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "0.3rem",
+                    whiteSpace: "nowrap",
+                    transition: "all 0.2s",
+                  }}
+                >
+                  <span>{copied ? "✅" : "📋"}</span>
+                  <span>{copied ? "Kopyalandı!" : "Kopyala"}</span>
+                </button>
+              </div>
+
+              <div
+                style={{
+                  fontSize: "0.78rem",
+                  color: "var(--md-text-secondary)",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "0.4rem",
+                }}
+              >
+                <span>📷</span>
+                <span>Telefon kameranız, Google Lens veya QR tarayıcı ile hemen tarayabilirsiniz.</span>
               </div>
             </div>
           )}

@@ -125,7 +125,7 @@ export default function MaarifLmsPage() {
               }}
             >
               <span>⬇️</span>
-              <span>Hızlı APK İndir (14 MB)</span>
+              <span>Hızlı APK İndir (5.2 MB)</span>
             </a>
 
             <button

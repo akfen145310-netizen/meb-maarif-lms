@@ -59,7 +59,7 @@ function getAllFiles(dir, baseDir = dir) {
 export async function uploadToGitHub({
   token = process.env.GITHUB_TOKEN,
   repoName = process.env.GITHUB_REPO || "meb-maarif-lms",
-  commitMessage = "fix(apk): Tam 14.2 MB Android APK paketi ve indirme düzeltmesi",
+  commitMessage = "fix(apk,qr): Gercek imzali Android APK paketi ve calisan QR karekod entegrasyonu",
   isPrivate = false,
   description = "MEB Maarif LMS - Türkiye Yüzyılı Maarif Modeli Dijital Sınıf Defteri & Portal",
 } = {}) {
@@ -217,7 +217,7 @@ export async function uploadToGitHub({
 if (process.argv[1] && process.argv[1].endsWith("github_uploader.mjs")) {
   const token = process.argv[2] || process.env.GITHUB_TOKEN;
   const repoName = process.argv[3] || process.env.GITHUB_REPO || "meb-maarif-lms";
-  const msg = process.argv[4] || "fix(apk): Tam 14.2 MB Android APK paketi ve indirme düzeltmesi";
+  const msg = process.argv[4] || "fix(apk,qr): Gercek imzali Android APK paketi ve calisan QR karekod entegrasyonu";
 
   uploadToGitHub({ token, repoName, commitMessage: msg })
     .then((res) => {
