@@ -1,0 +1,409 @@
+/* =====================================================================
+   Türkiye Yüzyılı Maarif Modeli LMS - Material Design Theme
+   Lacivert (Navy) & Krem (Cream) Pastel Renk Paleti & PWA Uyumlu Tasarım
+   ===================================================================== */
+
+:root {
+  --font-family-base: var(--font-sans), 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-family-mono: var(--font-mono), monospace;
+
+  /* Material Design - Lacivert & Krem Pastel Paleti */
+  /* Primary Lacivert / Navy Tonları */
+  --md-navy-dark: #0a1628;
+  --md-navy-primary: #122646;
+  --md-navy-surface: #1a3359;
+  --md-navy-light: #254474;
+  --md-navy-subtle: #3a5c91;
+
+  /* Krem & Pastel Fildişi Tonları (Yüzey ve Arka Plan) */
+  --md-cream-bg: #f9f7f2;
+  --md-cream-surface: #f4efe6;
+  --md-cream-card: #ffffff;
+  --md-cream-hover: #ede6d8;
+  --md-cream-border: #e3d9c6;
+  --md-cream-darker: #d8cbb5;
+
+  /* Vurgular (Maarif Altın & Maarif Turkuaz) */
+  --md-accent-gold: #c6923b;
+  --md-accent-gold-light: #dfb26b;
+  --md-accent-teal: #1f7a8c;
+  --md-accent-sage: #52796f;
+  --md-accent-coral: #d95d39;
+
+  /* Metin Renkleri */
+  --md-text-primary: #0f1d33;
+  --md-text-secondary: #485c7b;
+  --md-text-muted: #7e91ac;
+  --md-text-inverse: #fbf9f5;
+
+  /* Durum Renkleri (Yoklama & Kazanım) */
+  --status-present: #2d6a4f;      /* Geldi */
+  --status-present-bg: #d8f3dc;
+  --status-absent: #b02a37;       /* Gelmedi */
+  --status-absent-bg: #f8d7da;
+  --status-excused: #9a6700;      /* İzinli / Raporlu */
+  --status-excused-bg: #fff3cd;
+  --status-late: #055160;         /* Geç */
+  --status-late-bg: #cff4fc;
+
+  /* Material Design Elevation Shadows */
+  --md-elevation-1: 0 1px 3px rgba(18, 38, 70, 0.08), 0 1px 2px rgba(18, 38, 70, 0.04);
+  --md-elevation-2: 0 4px 6px -1px rgba(18, 38, 70, 0.08), 0 2px 4px -1px rgba(18, 38, 70, 0.04);
+  --md-elevation-3: 0 10px 15px -3px rgba(18, 38, 70, 0.1), 0 4px 6px -2px rgba(18, 38, 70, 0.05);
+  --md-elevation-4: 0 20px 25px -5px rgba(18, 38, 70, 0.12), 0 10px 10px -5px rgba(18, 38, 70, 0.04);
+
+  /* Radius (Material 3 Expressive) */
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--md-cream-bg);
+  color: var(--md-text-primary);
+  font-family: var(--font-family-base);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Material Typography */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--md-navy-primary);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+/* Containers */
+.container {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* Material Design Cards */
+.md-card {
+  background-color: var(--md-cream-card);
+  border: 1px solid var(--md-cream-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--md-elevation-1);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.md-card:hover {
+  box-shadow: var(--md-elevation-2);
+}
+
+.md-card-navy {
+  background: linear-gradient(135deg, var(--md-navy-primary) 0%, var(--md-navy-dark) 100%);
+  color: var(--md-text-inverse);
+  border: 1px solid var(--md-navy-surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--md-elevation-2);
+}
+
+.md-card-cream {
+  background: var(--md-cream-surface);
+  border: 1px solid var(--md-cream-border);
+  border-radius: var(--radius-md);
+}
+
+/* Material Buttons */
+.md-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: inherit;
+  user-select: none;
+}
+
+.md-btn:active {
+  transform: scale(0.98);
+}
+
+.md-btn-primary {
+  background-color: var(--md-navy-primary);
+  color: #ffffff;
+  box-shadow: var(--md-elevation-1);
+}
+
+.md-btn-primary:hover {
+  background-color: var(--md-navy-surface);
+  box-shadow: var(--md-elevation-2);
+}
+
+.md-btn-gold {
+  background: linear-gradient(135deg, var(--md-accent-gold) 0%, #b88228 100%);
+  color: #ffffff;
+  box-shadow: var(--md-elevation-1);
+}
+
+.md-btn-gold:hover {
+  filter: brightness(1.08);
+  box-shadow: var(--md-elevation-2);
+}
+
+.md-btn-secondary {
+  background-color: var(--md-cream-surface);
+  color: var(--md-navy-primary);
+  border: 1px solid var(--md-cream-border);
+}
+
+.md-btn-secondary:hover {
+  background-color: var(--md-cream-hover);
+  border-color: var(--md-cream-darker);
+}
+
+.md-btn-outline-navy {
+  background: transparent;
+  color: var(--md-navy-primary);
+  border: 1.5px solid var(--md-navy-primary);
+}
+
+.md-btn-outline-navy:hover {
+  background-color: rgba(18, 38, 70, 0.06);
+}
+
+/* Material Form Controls */
+.md-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.md-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--md-navy-primary);
+}
+
+.md-input, .md-select, .md-textarea {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  background-color: #ffffff;
+  border: 1.5px solid var(--md-cream-border);
+  border-radius: var(--radius-sm);
+  color: var(--md-text-primary);
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+.md-input:focus, .md-select:focus, .md-textarea:focus {
+  border-color: var(--md-navy-primary);
+  box-shadow: 0 0 0 3px rgba(18, 38, 70, 0.12);
+}
+
+/* Badges & Chips */
+.md-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.775rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.md-chip-navy {
+  background-color: rgba(18, 38, 70, 0.08);
+  color: var(--md-navy-primary);
+  border: 1px solid rgba(18, 38, 70, 0.15);
+}
+
+.md-chip-gold {
+  background-color: rgba(198, 146, 59, 0.12);
+  color: #936315;
+  border: 1px solid rgba(198, 146, 59, 0.3);
+}
+
+.md-chip-present {
+  background-color: var(--status-present-bg);
+  color: var(--status-present);
+  border: 1px solid rgba(45, 106, 79, 0.25);
+}
+
+.md-chip-absent {
+  background-color: var(--status-absent-bg);
+  color: var(--status-absent);
+  border: 1px solid rgba(176, 42, 55, 0.25);
+}
+
+.md-chip-excused {
+  background-color: var(--status-excused-bg);
+  color: var(--status-excused);
+  border: 1px solid rgba(154, 103, 0, 0.25);
+}
+
+.md-chip-late {
+  background-color: var(--status-late-bg);
+  color: var(--status-late);
+  border: 1px solid rgba(5, 81, 96, 0.25);
+}
+
+/* Tab Segmented Control */
+.md-tabs {
+  display: flex;
+  background-color: var(--md-cream-surface);
+  border: 1px solid var(--md-cream-border);
+  padding: 0.3rem;
+  border-radius: var(--radius-sm);
+  gap: 0.25rem;
+  overflow-x: auto;
+}
+
+.md-tab-item {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.55rem 1rem;
+  border-radius: var(--radius-xs);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--md-text-secondary);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.18s;
+}
+
+.md-tab-item.active {
+  background-color: var(--md-navy-primary);
+  color: #ffffff;
+  box-shadow: var(--md-elevation-1);
+}
+
+.md-tab-item:hover:not(.active) {
+  background-color: var(--md-cream-hover);
+  color: var(--md-navy-primary);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: var(--md-cream-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--md-cream-darker);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--md-navy-subtle);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* =====================================================================
+   Mobil Uyum (Mobile Responsive & APK / PWA Uyumluluk)
+   ===================================================================== */
+
+/* Dokunmatik Cihaz İyileştirmeleri */
+button, a, input, select, textarea {
+  touch-action: manipulation;
+}
+
+/* Mobil Alt Gezinme Çubuğu İçin Alt Boşluk */
+@media (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+
+  .container {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+
+  main.container {
+    padding-top: 1rem !important;
+    padding-bottom: 6rem !important;
+    gap: 1rem !important;
+  }
+
+  .md-card {
+    padding: 1rem !important;
+    border-radius: var(--radius-sm) !important;
+  }
+
+  /* Mobil Tab Kaydırma */
+  .md-tabs {
+    -webkit-overflow-scrolling: touch;
+    padding: 0.25rem;
+  }
+
+  .md-tab-item {
+    padding: 0.45rem 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  /* Butonlar mobilde rahat basılabilir olmalı */
+  .md-btn {
+    min-height: 42px;
+  }
+
+  /* Tablolar mobilde taşma yapmadan kaydırılabilir */
+  table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+
+  h1 { font-size: 1.35rem !important; }
+  h2 { font-size: 1.2rem !important; }
+  h3 { font-size: 1.05rem !important; }
+
+  /* Grid alanları tek sütuna düşsün */
+  .mobile-grid-1col {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Mobil Çentik ve Alt Çubuk Güvenli Alanı (Safe Area Insets) */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .mobile-bottom-bar {
+    padding-bottom: calc(env(safe-area-inset-bottom) + 0.4rem) !important;
+  }
+}
+

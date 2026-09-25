@@ -1,0 +1,769 @@
+{
+  "metadata": {
+    "proje": "MEB Türkiye Yüzyılı Maarif Modeli LMS & Dijital Sınıf Defteri",
+    "akademikYil": "2026-2027",
+    "mod": "Mock UI Skeleton (Veritabanı Bağımsız)",
+    "surum": "2.4-json-mock",
+    "renkPaleti": {
+      "anaRenk": "Pastel Lacivert (#122646 / #1a3359)",
+      "arkaplan": "Pastel Krem (#fcfaf6 / #f7f4ed)",
+      "vurgu": "Mat Altın / Hardal (#c6923b)"
+    }
+  },
+  "yillikPlanlar": [
+    {
+      "grade": 5,
+      "gradeLabel": "5. Sınıf",
+      "kademe": "Ortaokul",
+      "dersler": [
+        {
+          "dersAdi": "Türkçe",
+          "haftalikSaat": 6,
+          "ogretmen": "Elif Şahin",
+          "plan": [
+            {
+              "hafta": 3,
+              "ay": "Eylül",
+              "unite": "Söz Varlığı ve Anlam",
+              "konu": "Gerçek ve Mecaz Anlamlı Kelimeler",
+              "kazanimKodu": "TÜR.5.1.2",
+              "kazanimBasligi": "Kelimelerin gerçek ve mecaz anlamlarını ayırt eder.",
+              "maarifCiktisi": "Okuduğu metindeki kelimelerin bağlamsal anlamını sezgisel ve analitik yöntemle kavrar.",
+              "erdemDeger": "Dürüstlük & Doğruluk",
+              "beceriAlani": "Okuryazarlık (Dil Becerisi)",
+              "surecOdakliDegerlendirme": "Kelime eşleştirme kartları ve kavram analizi dereceli puanlama anahtarı (rubrik).",
+              "ogretmenTavsiyesi": {
+                "gorev": "Kelime kartları hazırlama ve zıt anlamlılarla eşleştirme.",
+                "testKitabi": "MEB 5. Sınıf Türkçe Çalışma Fasikülü Sayfa 15-18",
+                "soruSayisi": 15,
+                "ogretmenNotu": "Günlük okuma saatinde altını çizdiğiniz kelimelerle pratik yapın.",
+                "teslimTarihi": "21 Eylül 2026"
+              }
+            },
+            {
+              "hafta": 4,
+              "ay": "Eylül",
+              "unite": "Söz Varlığı ve Deyimler",
+              "konu": "Sözcükte Anlam, Deyimler ve Atasözlerinde Anlam İncelikleri",
+              "kazanimKodu": "TÜR.5.1.4",
+              "kazanimBasligi": "Metindeki deyim ve atasözlerinin anlama olan katkısını açıklar.",
+              "maarifCiktisi": "Kültürel miras ögesi olan deyim ve atasözlerini günlük dilde yerinde ve dürüstlük ilkesiyle kullanır.",
+              "erdemDeger": "Dürüstlük & Kültürel Miras",
+              "beceriAlani": "Okuryazarlık (Dil Becerisi)",
+              "surecOdakliDegerlendirme": "Öz değerlendirme formu ve deyim kullanım gözlem formu.",
+              "ogretmenTavsiyesi": {
+                "gorev": "Türkçe Maarif Defteri'ne içinde 'sözünün eri olmak' deyimi geçen kısa bir hikaye yazımı.",
+                "testKitabi": "MEB 5. Sınıf Türkçe Beceri Temelli Testler Kitabı Sayfa 28-32 (Test 4)",
+                "soruSayisi": 20,
+                "ogretmenNotu": "Deyimlerin mecaz anlamlarını sözlükten kontrol ederek cümle içinde kullanmaya özen gösterin.",
+                "teslimTarihi": "28 Eylül 2026"
+              }
+            },
+            {
+              "hafta": 5,
+              "ay": "Ekim",
+              "unite": "Cümlede Anlam İlişkileri",
+              "konu": "Cümlede Anlam: Neden-Sonuç ve Amaç-Sonuç İlişkileri",
+              "kazanimKodu": "TÜR.5.2.1",
+              "kazanimBasligi": "Cümleler arasındaki mantıksal anlam ilişkilerini tespit eder.",
+              "maarifCiktisi": "Düşüncelerini mantıksal gerekçelerle temellendirerek ifade eder.",
+              "erdemDeger": "Sorumluluk",
+              "beceriAlani": "Kavramsal Akıl Yürütme",
+              "surecOdakliDegerlendirme": "Cümle analiz çalışma yaprağı ve akran değerlendirmesi.",
+              "ogretmenTavsiyesi": {
+                "gorev": "Neden-sonuç ve amaç-sonuç cümlelerini renklendirerek deftere not alma.",
+                "testKitabi": "MEB 5. Sınıf Türkçe Çalışma Kitabı Sayfa 35-39",
+                "soruSayisi": 25,
+                "ogretmenNotu": "Cümledeki 'için, amacıyla, nedeniyle' eklerine dikkat edin.",
+                "teslimTarihi": "5 Ekim 2026"
+              }
+            }
+          ]
+        },
+        {
+          "dersAdi": "Matematik",
+          "haftalikSaat": 5,
+          "ogretmen": "Ahmet Yılmaz",
+          "plan": [
+            {
+              "hafta": 4,
+              "ay": "Eylül",
+              "unite": "Doğal Sayılar",
+              "konu": "Milyonlu Doğal Sayıların Okunması ve Basamak Değeri İlişkileri",
+              "kazanimKodu": "MAT.5.1.1",
+              "kazanimBasligi": "En çok dokuz basamaklı doğal sayıları okur, yazar ve basamak değerlerini belirtir.",
+              "maarifCiktisi": "Büyük sayıları gerçek hayat verileriyle (nüfus, mesafe) ilişkilendirerek akıl yürütür ve modeller.",
+              "erdemDeger": "Adalet & Doğruluk",
+              "beceriAlani": "Kavramsal Beceri (Sayı Hissi)",
+              "surecOdakliDegerlendirme": "Basamak tablosu performans görevi ve modelleme kontrol listesi.",
+              "ogretmenTavsiyesi": {
+                "gorev": "Türkiye'nin ve komşu ülkelerin nüfuslarını basamak tablosuna yerleştirip basamak değerlerini hesaplama.",
+                "testKitabi": "MEB Maarif Modeli Matematik 5 Çalışma Kitabı Sayfa 22-26 (Test 3)",
+                "soruSayisi": 25,
+                "ogretmenNotu": "Bölük kavramını karıştırmamak için sayıları sağdan sola üçerli gruplara ayırmayı unutmayın.",
+                "teslimTarihi": "29 Eylül 2026"
+              }
+            }
+          ]
+        },
+        {
+          "dersAdi": "Fen Bilimleri",
+          "haftalikSaat": 4,
+          "ogretmen": "Sevgi Can",
+          "plan": [
+            {
+              "hafta": 4,
+              "ay": "Eylül",
+              "unite": "Güneş, Dünya ve Ay",
+              "konu": "Güneş, Dünya ve Ay'ın Geometrik Yapısı ve Hareketleri",
+              "kazanimKodu": "FEN.5.1.2",
+              "kazanimBasligi": "Ay'ın dönme ve dolanma hareketlerini açıklar; evrelerini modeller.",
+              "maarifCiktisi": "Gözlem verilerini kullanarak Ay'ın evrelerini bilimsel merak ve gözlem disipliniyle inceler.",
+              "erdemDeger": "Merhamet & Evren Düzeni",
+              "beceriAlani": "Okuryazarlık (Fen Okuryazarlığı)",
+              "surecOdakliDegerlendirme": "Haftalık gözlem günlüğü ve 3 boyutlu model sunumu.",
+              "ogretmenTavsiyesi": {
+                "gorev": "1 hafta boyunca akşamları Ay'ın gökyüzündeki şeklini çizerek gözlem günlüğü oluşturma.",
+                "testKitabi": "MEB Fen Bilimleri 5 Beceri Temelli Sorular Sayfa 19-24",
+                "soruSayisi": 18,
+                "ogretmenNotu": "Ay'ın ana ve ara evrelerini sıralamasıyla öğreniniz.",
+                "teslimTarihi": "30 Eylül 2026"
+              }
+            }
+          ]
+        },
+        {
+          "dersAdi": "Sosyal Bilgiler",
+          "haftalikSaat": 3,
+          "ogretmen": "Kemal Arslan",
+          "plan": [
+            {
+              "hafta": 4,
+              "ay": "Eylül",
+              "unite": "Birey ve Toplum",
+              "konu": "Birey ve Toplum: Haklarımız, Sorumluluklarımız ve Çocuk Hakları",
+              "kazanimKodu": "SOS.5.1.3",
+              "kazanimBasligi": "İçinde bulunduğu gruplarda aldığı roller ile rollerin gerektirdiği hak ve sorumlulukları ilişkilendirir.",
+              "maarifCiktisi": "Toplumsal yaşamda kendi haklarını savunurken başkalarının haklarına saygı duyar, adaleti gözetir.",
+              "erdemDeger": "Adalet & Sorumluluk",
+              "beceriAlani": "Sosyo-Duygusal & Vatandaşlık",
+              "surecOdakliDegerlendirme": "Hak ve sorumluluk eşleştirme afişi ve vaka analizi.",
+              "ogretmenTavsiyesi": {
+                "gorev": "Evde, okulda ve arkadaş çevresinde sahip olduğu 3 hak ve 3 sorumluluğu gösteren afiş hazırlama.",
+                "testKitabi": "MEB Sosyal Bilgiler 5 Beceri Temelli Sorular Sayfa 20-25",
+                "soruSayisi": 20,
+                "ogretmenNotu": "Çocuk Hakları Sözleşmesi maddelerini gözden geçiriniz.",
+                "teslimTarihi": "1 Ekim 2026"
+              }
+            }
+          ]
+        },
+        {
+          "dersAdi": "İngilizce",
+          "haftalikSaat": 4,
+          "ogretmen": "Canan Şahin",
+          "plan": [
+            {
+              "hafta": 4,
+              "ay": "Eylül",
+              "unite": "Unit 1: Hello!",
+              "konu": "Hello! - School Subjects, Timetables & Expressing Likes",
+              "kazanimKodu": "İNG.5.1.1",
+              "kazanimBasligi": "Students will be able to talk about school subjects and express likes/dislikes.",
+              "maarifCiktisi": "Farklı kültürlerden akranlarıyla saygı ve nezaket çerçevesinde kendini tanıtır ve ders programını anlatır.",
+              "erdemDeger": "Saygı & Nezaket",
+              "beceriAlani": "Sosyo-Duygusal İletişim",
+              "surecOdakliDegerlendirme": "İngilizce diyalog canlandırma ve konuşma rubriği.",
+              "ogretmenTavsiyesi": {
+                "gorev": "Kendi haftalık ders programını İngilizce hazırlayıp odasına asma.",
+                "testKitabi": "MEB 5th Grade English Activity Book Page 14-18",
+                "soruSayisi": 15,
+                "ogretmenNotu": "'I like Science but I don't like History' kalıplarıyla 5 cümle kurunuz.",
+                "teslimTarihi": "29 Eylül 2026"
+              }
+            }
+          ]
+        },
+        {
+          "dersAdi": "Din Kültürü ve Ahlak Bilgisi",
+          "haftalikSaat": 2,
+          "ogretmen": "Mustafa Koç",
+          "plan": [
+            {
+              "hafta": 4,
+              "ay": "Eylül",
+              "unite": "Allah İnancı",
+              "konu": "Allah İnancı: Rahman ve Rahim Olan Allah",
+              "kazanimKodu": "DİN.5.1.2",
+              "kazanimBasligi": "Allah'ın (c.c.) her şeyi yaratan, yaşatan ve esirgeyen olduğunu ayetlerle kavrar.",
+              "maarifCiktisi": "Evrendeki kusursuz dengeyi fark ederek canlılara karşı merhamet ve sevgi bilinci geliştirir.",
+              "erdemDeger": "Merhamet & Şükür",
+              "beceriAlani": "Sosyo-Duygusal Beceriler",
+              "surecOdakliDegerlendirme": "İyilik davranışı günlüğü ve ayet yorumlama kağıdı.",
+              "ogretmenTavsiyesi": {
+                "gorev": "Çevremizdeki canlıları korumaya yönelik 1 iyilik davranışı yapıp not etme.",
+                "testKitabi": "MEB Din Kültürü 5 Çalışma Kitabı Sayfa 16-20",
+                "soruSayisi": 15,
+                "ogretmenNotu": "İhlas suresinin anlamını öğreniniz.",
+                "teslimTarihi": "28 Eylül 2026"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "grade": 6,
+      "gradeLabel": "6. Sınıf",
+      "kademe": "Ortaokul",
+      "dersler": [
+        {
+          "dersAdi": "Türkçe",
+          "haftalikSaat": 6,
+          "ogretmen": "Elif Şahin",
+          "plan": [
+            {
+              "hafta": 4,
+              "ay": "Eylül",
+              "unite": "Sözcükte Yapı",
+              "konu": "Kökler (İsim ve Fiil Kökü), Yapım ve Çekim Ekleri",
+              "kazanimKodu": "TÜR.6.1.4",
+              "kazanimBasligi": "Kelimelerin kök ve eklerini ayırt eder; yapım eklerinin türetme gücünü kavrar.",
+              "maarifCiktisi": "Kelimelerin morfolojik yapısını analiz ederek Türkçenin türetme zenginliğini dil bilinciyle kavrar.",
+              "erdemDeger": "Özen & Dil Bilinci",
+              "beceriAlani": "Okuryazarlık (Dil Bilgisi)",
+              "surecOdakliDegerlendirme": "Ek-kök çözümleme tablosu ve tanılayıcı dallanmış ağaç testi.",
+              "ogretmenTavsiyesi": {
+                "gorev": "Günlük hayatta en sık kullandığınız 15 sözcüğü kök ve eklerine ayırıp ek şeması tablosu oluşturunuz.",
+                "testKitabi": "MEB 6. Sınıf Türkçe Beceri Temelli Sorular Sayfa 24-28 (Kazanım Testi 4)",
+                "soruSayisi": 20,
+                "ogretmenNotu": "İsim kökü ile fiil kökünü ayırt etmek için -mak/-mek mastar ekini kullanınız.",
+                "teslimTarihi": "28 Eylül 2026"
+              }
+            }
+          ]
+        },
+        {
+          "dersAdi": "Matematik",
+          "haftalikSaat": 5,
+          "ogretmen": "Ahmet Yılmaz",
+          "plan": [
+            {
+              "hafta": 4,
+              "ay": "Eylül",
+              "unite": "Doğal Sayılarla İşlemler",
+              "konu": "Üslü İfadeler ve İşlem Önceliği",
+              "kazanimKodu": "MAT.6.1.1",
+              "kazanimBasligi": "Bir doğal sayının kendisiyle tekrarlı çarpımını üslü ifade olarak yazar; işlem önceliğini uygular.",
+              "maarifCiktisi": "İşlem adımlarını mantıksal sıralama ve kural disipliniyle çözerek matematiksel akıl yürütür.",
+              "erdemDeger": "Sabır & Mantıksal Disiplin",
+              "beceriAlani": "Kavramsal Akıl Yürütme",
+              "surecOdakliDegerlendirme": "İşlem önceliği basamak kontrol listesi ve akran eşleştirmesi.",
+              "ogretmenTavsiyesi": {
+                "gorev": "İşlem önceliği basamaklarını gösteren renkli poster hazırlama.",
+                "testKitabi": "MEB Maarif Modeli Matematik 6 Çalışma Kitabı Sayfa 18-24",
+                "soruSayisi": 25,
+                "ogretmenNotu": "Parantez içi işlemlerin her zaman öncelikli olduğunu unutmayınız.",
+                "teslimTarihi": "29 Eylül 2026"
+              }
+            }
+          ]
+        },
+        {
+          "dersAdi": "Fen Bilimleri",
+          "haftalikSaat": 4,
+          "ogretmen": "Sevgi Can",
+          "plan": [
+            {
+              "hafta": 4,
+              "ay": "Eylül",
+              "unite": "Güneş Sistemi",
+              "konu": "Güneş Sistemi ve Gezegenlerin Özellikleri (İç ve Dış Gezegenler)",
+              "kazanimKodu": "FEN.6.1.1",
+              "kazanimBasligi": "Güneş sistemindeki gezegenleri Güneş'e olan yakınlıklarına ve özelliklerine göre sıralar.",
+              "maarifCiktisi": "Evrendeki gök cisimlerinin büyüklük ve mesafelerini modelleyerek bilimsel gözlem farkındalığı kazanır.",
+              "erdemDeger": "Evren Düzenine Saygı",
+              "beceriAlani": "Fen Okuryazarlığı & Modelleme",
+              "surecOdakliDegerlendirme": "Gezegen karşılaştırma matrisi ve sunum rubriği.",
+              "ogretmenTavsiyesi": {
+                "gorev": "Güneş sistemindeki 8 gezegenin özelliklerini içeren karşılaştırma infografiği hazırlama.",
+                "testKitabi": "MEB 6. Sınıf Fen Bilimleri Beceri Soruları Sayfa 15-20",
+                "soruSayisi": 20,
+                "ogretmenNotu": "Karasal ve gazsal gezegen ayrımına dikkat ediniz.",
+                "teslimTarihi": "30 Eylül 2026"
+              }
+            }
+          ]
+        },
+        {
+          "dersAdi": "Sosyal Bilgiler",
+          "haftalikSaat": 3,
+          "ogretmen": "Kemal Arslan",
+          "plan": [
+            {
+              "hafta": 4,
+              "ay": "Eylül",
+              "unite": "Biz ve Değerlerimiz",
+              "konu": "Toplumsal Yardımlaşma, Dayanışma ve Sadaka Taşı Geleneği",
+              "kazanimKodu": "SOS.6.1.2",
+              "kazanimBasligi": "Toplumsal yardımlaşma ve dayanışmanın toplum huzuruna ve birlikteliğe katkısını değerlendirir.",
+              "maarifCiktisi": "Tarihten günümüze vakıf ve yardımlaşma kültürünü analiz ederek cömertlik ve empati erdemlerini benimser.",
+              "erdemDeger": "Yardımlaşma & Dayanışma",
+              "beceriAlani": "Sosyo-Duygusal Beceriler",
+              "surecOdakliDegerlendirme": "Vakıf kültürü araştırma raporu.",
+              "ogretmenTavsiyesi": {
+                "gorev": "Osmanlı'daki 'Sadaka Taşı' veya 'Zimem Defteri' geleneğini anlatan 1 sayfalık araştırma yazısı.",
+                "testKitabi": "MEB 6. Sınıf Sosyal Bilgiler Çalışma Fasikülü Sayfa 22-26",
+                "soruSayisi": 15,
+                "ogretmenNotu": "Yakın çevrenizdeki bir yardımlaşma derneğinin faaliyetlerini inceleyebilirsiniz.",
+                "teslimTarihi": "1 Ekim 2026"
+              }
+            }
+          ]
+        },
+        {
+          "dersAdi": "İngilizce",
+          "haftalikSaat": 4,
+          "ogretmen": "Canan Şahin",
+          "plan": [
+            {
+              "hafta": 4,
+              "ay": "Eylül",
+              "unite": "Unit 1: Life",
+              "konu": "Describing Daily Routines, Habits & Simple Present Tense",
+              "kazanimKodu": "İNG.6.1.2",
+              "kazanimBasligi": "Students will be able to talk about repeated actions and daily routines.",
+              "maarifCiktisi": "Zaman yönetimi ve planlı yaşam bilinciyle günlük programını İngilizce olarak ifade eder.",
+              "erdemDeger": "Zaman Yönetimi & Sorumluluk",
+              "beceriAlani": "İletişim & Dil Becerisi",
+              "surecOdakliDegerlendirme": "Günlük rutin sunumu ve zaman çizelgesi değerlendirmesi.",
+              "ogretmenTavsiyesi": {
+                "gorev": "Bir iş günündeki 6 temel rutininizi saatleriyle birlikte Simple Present Tense ile yazınız.",
+                "testKitabi": "MEB 6th Grade English Workbook Page 12-16",
+                "soruSayisi": 20,
+                "ogretmenNotu": "'He/She/It' öznelerinde fiile '-s/-es' takısı getirmeyi unutmayınız.",
+                "teslimTarihi": "29 Eylül 2026"
+              }
+            }
+          ]
+        },
+        {
+          "dersAdi": "Din Kültürü ve Ahlak Bilgisi",
+          "haftalikSaat": 2,
+          "ogretmen": "Mustafa Koç",
+          "plan": [
+            {
+              "hafta": 4,
+              "ay": "Eylül",
+              "unite": "Peygamber ve İlahi Kitap İnancı",
+              "konu": "Peygamberlerin Nitelikleri (Sıdk, Emanet, İsmet, Fetanet, Tebliğ)",
+              "kazanimKodu": "DİN.6.1.2",
+              "kazanimBasligi": "Peygamberlerin sıfatlarını açıklar ve insanlık için önemini yorumlar.",
+              "maarifCiktisi": "Doğruluk, dürüstlük ve emanete riayet erdemlerini peygamberlerin hayatından ilhamla davranışa dönüştürür.",
+              "erdemDeger": "Doğruluk & Emanet",
+              "beceriAlani": "Ahlaki Muhakeme",
+              "surecOdakliDegerlendirme": "Kavram haritası ve ahlaki ikilem tartışma formu.",
+              "ogretmenTavsiyesi": {
+                "gorev": "5 peygamber sıfatını tanımlarıyla birlikte kavram haritasına yerleştirme.",
+                "testKitabi": "MEB 6. Sınıf Din Kültürü Kazanım Testleri Sayfa 14-18",
+                "soruSayisi": 15,
+                "ogretmenNotu": "Sıdk (doğruluk) ve Emanet (güvenilirlik) kavramlarının günlük hayatımızdaki karşılıklarını düşününüz.",
+                "teslimTarihi": "28 Eylül 2026"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "grade": 7,
+      "gradeLabel": "7. Sınıf",
+      "kademe": "Ortaokul",
+      "dersler": [
+        {
+          "dersAdi": "Türkçe",
+          "haftalikSaat": 5,
+          "ogretmen": "Zeynep Kaya",
+          "plan": [
+            {
+              "hafta": 4,
+              "ay": "Eylül",
+              "unite": "Fiillerde Anlam",
+              "konu": "İş, Oluş ve Durum Fiilleri ile Haber/Dilek Kipleri",
+              "kazanimKodu": "TÜR.7.3.1",
+              "kazanimBasligi": "Fiillerin anlam özelliklerini ayırt eder ve kiplerle çekimler.",
+              "maarifCiktisi": "Eylemlerin ifade ettiği durumları anlam incelikleriyle fark ederek estetik ve zengin bir dille aktarır.",
+              "erdemDeger": "Estetik Duyarlık",
+              "beceriAlani": "Okuryazarlık (Dil Becerisi)",
+              "surecOdakliDegerlendirme": "Fiil sınıflandırma tablosu.",
+              "ogretmenTavsiyesi": {
+                "gorev": "Okuduğunuz kitaptan 5 iş, 5 oluş, 5 durum fiili bularak cümle içinde kullanınız.",
+                "testKitabi": "MEB 7. Sınıf Türkçe Beceri Temelli Testler Sayfa 28-34",
+                "soruSayisi": 25,
+                "ogretmenNotu": "İş fiillerinin başına 'onu' kelimesinin geldiğini anımsayınız.",
+                "teslimTarihi": "28 Eylül 2026"
+              }
+            }
+          ]
+        },
+        {
+          "dersAdi": "Matematik",
+          "haftalikSaat": 5,
+          "ogretmen": "Ahmet Yılmaz",
+          "plan": [
+            {
+              "hafta": 4,
+              "ay": "Eylül",
+              "unite": "Tam Sayılarla İşlemler",
+              "konu": "Tam Sayılarla Çarpma ve Bölme İşlemleri ve Sayı Doğrusunda Modelleme",
+              "kazanimKodu": "MAT.7.1.1",
+              "kazanimBasligi": "Tam sayılarla çarpma ve bölme işlemlerini yapar; ilgili problemleri modeller.",
+              "maarifCiktisi": "Negatif ve pozitif değer ilişkilerini borç-alacak, sıcaklık gibi hayat pratikleriyle adalet ve denge ekseninde yorumlar.",
+              "erdemDeger": "Adalet & Denge",
+              "beceriAlani": "Kavramsal Akıl Yürütme",
+              "surecOdakliDegerlendirme": "Sayı pulları modelleme kontrol listesi.",
+              "ogretmenTavsiyesi": {
+                "gorev": "İşaret kurallarını modelleyen sayı pulları alıştırmaları yapınız.",
+                "testKitabi": "MEB Maarif Modeli Matematik 7 Çalışma Fasikülü Sayfa 20-26",
+                "soruSayisi": 30,
+                "ogretmenNotu": "Aynı işaretli sayıların çarpımının pozitif, zıt işaretli sayıların negatif olduğunu modellerle kavrayınız.",
+                "teslimTarihi": "29 Eylül 2026"
+              }
+            }
+          ]
+        },
+        {
+          "dersAdi": "Fen Bilimleri",
+          "haftalikSaat": 4,
+          "ogretmen": "Sevgi Can",
+          "plan": [
+            {
+              "hafta": 4,
+              "ay": "Eylül",
+              "unite": "Güneş Sistemi ve Ötesi",
+              "konu": "Uzay Araştırmaları, Yapay Uydular ve Türkiye'nin Uzay Misyonu",
+              "kazanimKodu": "FEN.7.1.1",
+              "kazanimBasligi": "Uzay araştırmalarında kullanılan teknolojileri ve Türkiye'nin yerli uydularını açıklar.",
+              "maarifCiktisi": "Milli teknoloji hamlesi vizyonuyla Türkiye'nin uzay çalışmalarını (Türksat, İmece) araştırarak vatanseverlik bilinci geliştirir.",
+              "erdemDeger": "Vatanseverlik & Bilimsel Merak",
+              "beceriAlani": "Fen ve Teknoloji Okuryazarlığı",
+              "surecOdakliDegerlendirme": "Milli uydu araştırma kartı ve sunum rubriği.",
+              "ogretmenTavsiyesi": {
+                "gorev": "Türkiye'nin ilk yerli gözlem uydusu İMECE'nin görev alanlarını özetleyen araştırma kartı hazırlama.",
+                "testKitabi": "MEB 7. Sınıf Fen Bilimleri Beceri Soruları Sayfa 14-20",
+                "soruSayisi": 20,
+                "ogretmenNotu": "Uzay kirliliğinin gelecekte yaratacağı tehlikeleri de not ediniz.",
+                "teslimTarihi": "30 Eylül 2026"
+              }
+            }
+          ]
+        },
+        {
+          "dersAdi": "Sosyal Bilgiler",
+          "haftalikSaat": 3,
+          "ogretmen": "Kemal Arslan",
+          "plan": [
+            {
+              "hafta": 4,
+              "ay": "Eylül",
+              "unite": "İletişim ve İnsan İlişkileri",
+              "konu": "Sen Dili - Ben Dili, Empati ve Etkili Dinleme",
+              "kazanimKodu": "SOS.7.1.1",
+              "kazanimBasligi": "İletişimi olumlu ve olumsuz etkileyen tutumları fark ederek kendi iletişim dilini geliştirir.",
+              "maarifCiktisi": "Karşısındakini yargılamadan dinleme, 'ben dili' kullanma ve erdemli iletişimle çatışmaları çözme becerisi kazanır.",
+              "erdemDeger": "Empati & Nezaket",
+              "beceriAlani": "Sosyo-Duygusal İletişim",
+              "surecOdakliDegerlendirme": "Empati günlüğü ve rol canlandırma gözlem formu.",
+              "ogretmenTavsiyesi": {
+                "gorev": "Ailenizle veya bir arkadaşınızla iletişiminizde 3 kez 'sen dili' yerine 'ben dili' kullanarak sonucu günlüğünüze yazınız.",
+                "testKitabi": "MEB 7. Sınıf Sosyal Bilgiler Çalışma Kitabı Sayfa 18-24",
+                "soruSayisi": 20,
+                "ogretmenNotu": "'Sen hep geç kalıyorsun' yerine 'Geç kaldığında endişeleniyorum' yaklaşımını deneyimleyiniz.",
+                "teslimTarihi": "1 Ekim 2026"
+              }
+            }
+          ]
+        },
+        {
+          "dersAdi": "İngilizce",
+          "haftalikSaat": 4,
+          "ogretmen": "Canan Şahin",
+          "plan": [
+            {
+              "hafta": 4,
+              "ay": "Eylül",
+              "unite": "Unit 1: Appearance and Personality",
+              "konu": "Describing People & Comparative Adjectives",
+              "kazanimKodu": "İNG.7.1.2",
+              "kazanimBasligi": "Students will be able to describe characters and physical appearances using comparatives.",
+              "maarifCiktisi": "İnsanların farklı özelliklerine saygı göstererek hoşgörü ve dürüstlük ilkeleriyle betimleme yapar.",
+              "erdemDeger": "Hoşgörü & Saygı",
+              "beceriAlani": "İletişim ve Kişilerarası Beceriler",
+              "surecOdakliDegerlendirme": "Kişilik profili poster çalışması.",
+              "ogretmenTavsiyesi": {
+                "gorev": "En sevdiğiniz iki edebi veya tarihi şahsiyetin kişilik özelliklerini İngilizce comparative kalıplarıyla karşılaştırınız.",
+                "testKitabi": "MEB 7th Grade English Practice Book Page 16-22",
+                "soruSayisi": 20,
+                "ogretmenNotu": "'more generous than', 'kinder than' yapılarına dikkat ediniz.",
+                "teslimTarihi": "29 Eylül 2026"
+              }
+            }
+          ]
+        },
+        {
+          "dersAdi": "Din Kültürü ve Ahlak Bilgisi",
+          "haftalikSaat": 2,
+          "ogretmen": "Mustafa Koç",
+          "plan": [
+            {
+              "hafta": 4,
+              "ay": "Eylül",
+              "unite": "Melek ve Ahiret İnancı",
+              "konu": "Görünmeyen Âleme İman ve Meleklerin Görevleri",
+              "kazanimKodu": "DİN.7.1.2",
+              "kazanimBasligi": "Meleklerin özelliklerini ve görevlerini ayet ve hadisler ışığında açıklar.",
+              "maarifCiktisi": "Kiramen Kâtibin meleklerinin varlığı bilinciyle günlük davranışlarında sorumluluk, adalet ve dürüstlük gözetir.",
+              "erdemDeger": "Sorumluluk & Özdenetim",
+              "beceriAlani": "Ahlaki Muhakeme",
+              "surecOdakliDegerlendirme": "Meleklerin vazifeleri şeması ve öz değerlendirme kağıdı.",
+              "ogretmenTavsiyesi": {
+                "gorev": "Dört büyük meleğin isimlerini ve vazifelerini şematik olarak hazırlayınız.",
+                "testKitabi": "MEB 7. Sınıf Din Kültürü Çalışma Kitabı Sayfa 16-22",
+                "soruSayisi": 15,
+                "ogretmenNotu": "Özdenetim sahibi olmanın insan vicdanına sağladığı iç huzuru düşününüz.",
+                "teslimTarihi": "28 Eylül 2026"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "grade": 8,
+      "gradeLabel": "8. Sınıf (LGS Kademesi)",
+      "kademe": "Ortaokul",
+      "dersler": [
+        {
+          "dersAdi": "Türkçe",
+          "haftalikSaat": 5,
+          "ogretmen": "Zeynep Kaya",
+          "plan": [
+            {
+              "hafta": 4,
+              "ay": "Eylül",
+              "unite": "Dil Bilgisi: Fiilimsiler",
+              "konu": "Fiilimsiler (İsim-Fiil, Sıfat-Fiil, Zarf-Fiil)",
+              "kazanimKodu": "TÜR.8.3.1",
+              "kazanimBasligi": "Fiilimsilerin cümledeki işlevlerini fark eder ve türlerini ayırt eder.",
+              "maarifCiktisi": "Metinlerdeki dil bilgisi yapılarını analiz ederek düşüncesini zengin ve akıcı bir üslupla ifade eder.",
+              "erdemDeger": "Çalışkanlık & Özen",
+              "beceriAlani": "Okuryazarlık (Dil Bilgisi)",
+              "surecOdakliDegerlendirme": "LGS deneme soru analiz formu ve hata günlüğü.",
+              "ogretmenTavsiyesi": {
+                "gorev": "LGS denemesinde çıkan fiilimsi sorularını analiz edip hatalı soruları soru defterine yapıştırma.",
+                "testKitabi": "MEB 8. Sınıf LGS Türkçe Çalışma Fasikülü Sayfa 30-36 (Kazanım Testi 5)",
+                "soruSayisi": 30,
+                "ogretmenNotu": "Kalıplaşmış isimlerle sıfat-fiil eklerini (-acak, -miş, -ar) karıştırmayınız.",
+                "teslimTarihi": "28 Eylül 2026"
+              },
+              "isLgsKritik": true,
+              "kavramYanilgisi": {
+                "baslik": "⚠️ Fiilimsi ve Kalıplaşmış İsim Yanılgısı",
+                "aciklama": "Öğrenciler 'Dolmuş durağı', 'Yemek masası' veya 'Dondurma külahı' gibi sözcüklerdeki ekleri fiilimsi eki sanarak işaretlemektedir.",
+                "dogrusu": "Eğer sözcük bir eylemi değil de somut bir varlığı/kavramı karşılıyorsa kalıplaşmış kalıcı isimdir; olumsuzu (-me/-ma ekiyle) yapılamaz! (Örn: 'dondurma' -> 'dondurmama' diyemezsiniz)."
+              },
+              "lgsVurgusu": {
+                "onemDerecesi": "Kritik",
+                "soruTipi": "Cümle Analizi & Paragrafta Fiilimsi Tür Eşleştirme",
+                "cozumIpuclari": [
+                  "1. Kural: Cümledeki çekimli fiilleri (yüklemleri) hemen eleyin; fiilimsiler çekim eki almaz.",
+                  "2. Kural: 'An-ası-mez-ar-dik-ecek-miş' sıfat-fiil eklerinin nitelediği ismi bulun.",
+                  "3. Kural: Zarf-fiil eklerinin cümleye zaman mı durum mu kattığını kontrol edin."
+                ],
+                "ornekSoruAnalizi": "MEB LGS'de son 5 yılın 4'ünde doğrudan fiilimsi türü veya fiilimsi sayısı sorulmuştur."
+              }
+            }
+          ]
+        },
+        {
+          "dersAdi": "Matematik",
+          "haftalikSaat": 5,
+          "ogretmen": "Ahmet Yılmaz",
+          "plan": [
+            {
+              "hafta": 4,
+              "ay": "Eylül",
+              "unite": "Çarpanlar ve Katlar",
+              "konu": "EBOB - EKOK Problemleri ve Modelleme",
+              "kazanimKodu": "MAT.8.1.1",
+              "kazanimBasligi": "İki doğal sayının EBOB ve EKOK'unu hesaplar; ilgili problemleri çözer.",
+              "maarifCiktisi": "Parçalardan bütüne veya bütünden parçaya akıl yürütme stratejileri geliştirerek problem çözer.",
+              "erdemDeger": "Adalet & Mantıksal Çözümleme",
+              "beceriAlani": "Kavramsal Akıl Yürütme",
+              "surecOdakliDegerlendirme": "Yeni nesil problem çözme adımları rubriği.",
+              "ogretmenTavsiyesi": {
+                "gorev": "LGS çıkmış EBOB-EKOK sorularından 15 yeni nesil problem çözümü.",
+                "testKitabi": "MEB LGS Matematik Örnek Sorular Kitapçığı Sayfa 14-22",
+                "soruSayisi": 25,
+                "ogretmenNotu": "Bölme/parçalama sorularında EBOB, kat sorularında EKOK kullanıldığını hatırlayınız.",
+                "teslimTarihi": "29 Eylül 2026"
+              },
+              "isLgsKritik": true,
+              "kavramYanilgisi": {
+                "baslik": "⚠️ EBOB ile EKOK Soru Tiplerinin Karıştırılması",
+                "aciklama": "Öğrenciler soru metninde 'en az' kelimesini görünce hemen EKOK, 'en çok' görünce EBOB uygulamaktadır. Bu yöntem tamamen YANLIŞTIR!",
+                "dogrusu": "Kural: Bütünden parçaya gidiliyorsa (büyük çuvallar eşit poşetlere ayrılıyorsa) EBOB; küçük parçalardan büyük bir bütün oluşturuluyorsa (fayanslar kareye tamamlanıyorsa) EKOK kullanılır!"
+              },
+              "lgsVurgusu": {
+                "onemDerecesi": "Kritik",
+                "soruTipi": "Yeni Nesil Senaryolu Modelleme & Şekilli Alan Problemleri",
+                "cozumIpuclari": [
+                  "1. Kural: Dikdörtgen levhaların kenar uzunlukları ortak bölen (EBOB) üzerinden test edilmelidir.",
+                  "2. Kural: 'Aralarında asal' şartı verildiyse sayıların 1 dışında ortak böleni olmadığını doğrulayın.",
+                  "3. Kural: EBOB(a, b) × EKOK(a, b) = a × b kuralını uygulayın."
+                ],
+                "ornekSoruAnalizi": "LGS Matematik testinin 1. sorusu her yıl istisnasız EBOB-EKOK veya Asal Çarpanlar modellemesidir."
+              }
+            }
+          ]
+        },
+        {
+          "dersAdi": "Fen Bilimleri",
+          "haftalikSaat": 4,
+          "ogretmen": "Sevgi Can",
+          "plan": [
+            {
+              "hafta": 4,
+              "ay": "Eylül",
+              "unite": "Mevsimler ve İklim",
+              "konu": "Dünya'nın Dönme Ekseni Eğikliği ve Güneş Işınlarının Geliş Açısı",
+              "kazanimKodu": "FEN.8.1.1",
+              "kazanimBasligi": "Mevsimlerin oluşumuna yönelik tahminlerde bulunur.",
+              "maarifCiktisi": "Güneş ışınlarının dik ve eğik açıyla gelmesinin birim yüzeye düşen enerjiye etkisini modeller.",
+              "erdemDeger": "Bilimsel Merak & Çevre Bilinci",
+              "beceriAlani": "Okuryazarlık (Fen & Çevre)",
+              "surecOdakliDegerlendirme": "Eksen eğikliği deney raporu ve akran değerlendirmesi.",
+              "ogretmenTavsiyesi": {
+                "gorev": "El feneri ve küre modeliyle 21 Haziran ve 21 Aralık tarihlerindeki ışık yoğunluğu deneyini yapma.",
+                "testKitabi": "MEB 8. Sınıf Fen Bilimleri Beceri Temelli Sorular Sayfa 12-18",
+                "soruSayisi": 25,
+                "ogretmenNotu": "Güneş'e olan mesafenin mevsimlerin oluşumuyla ilgisi olmadığını unutmayınız.",
+                "teslimTarihi": "30 Eylül 2026"
+              },
+              "isLgsKritik": true,
+              "kavramYanilgisi": {
+                "baslik": "⚠️ Kritik Yanılgı: Dünya'nın Güneş'e Olan Mesafesi",
+                "aciklama": "Öğrencilerin büyük kısmı Dünya Güneş'e yaklaştığında havaların ısınıp yaz olduğunu sanmaktadır.",
+                "dogrusu": "Mevsimlerin oluşumunun Dünya'nın Güneş'e olan mesafesiyle HİÇBİR İLGİSİ YOKTUR! Nitekim Kuzey Yarımküre'de kış yaşanırken Dünya Güneş'e en yakın konumdadır. Asıl etken 23° 27' eksen eğikliği ve geliş açısıdır."
+              },
+              "lgsVurgusu": {
+                "onemDerecesi": "Kritik",
+                "soruTipi": "Deney Düzeneği, Işık Yoğunluğu & Gölge Boyu Grafiği",
+                "cozumIpuclari": [
+                  "1. Kural: Işın dik açıyla (90°) gelirse birim alana düşen ısı enerjisi en fazladır (Yaz mevsimi).",
+                  "2. Kural: Öğle vakti dik açıyla gelen ışınlarda gölge boyu minimum, eğik kış ışınlarında maksimumdur.",
+                  "3. Kural: 21 Mart ve 23 Eylül Ekinoks tarihlerinde tüm dünyada gece-gündüz eşitliği yaşanır."
+                ],
+                "ornekSoruAnalizi": "LGS Fen Bilimleri 1. sorusu daima Mevsimler ve İklim konusundan gelir."
+              }
+            }
+          ]
+        },
+        {
+          "dersAdi": "T.C. İnkılap Tarihi ve Atatürkçülük",
+          "aciklama": "8. Sınıflarda Sosyal Bilgiler yerine gelir",
+          "haftalikSaat": 2,
+          "ogretmen": "Kemal Arslan",
+          "plan": [
+            {
+              "hafta": 4,
+              "ay": "Eylül",
+              "unite": "Bir Kahraman Doğuyor",
+              "konu": "Mustafa Kemal'in Fikir Hayatını Etkileyen Olaylar ve Yazarlar",
+              "kazanimKodu": "İNK.8.1.3",
+              "kazanimBasligi": "Mustafa Kemal'in çocukluk ve öğrenim hayatından hareketle kişilik özelliklerinin oluşumunu analiz eder.",
+              "maarifCiktisi": "Tarihsel şahsiyetlerin liderlik ve vatanseverlik vasıflarını kendi karakter gelişimine rehber edinir.",
+              "erdemDeger": "Vatanseverlik & Liderlik",
+              "beceriAlani": "Tarihsel Düşünme & Erdem",
+              "surecOdakliDegerlendirme": "Tarihsel karakter analiz tablosu.",
+              "ogretmenTavsiyesi": {
+                "gorev": "Mustafa Kemal'i etkileyen Manastır Askeri İdadisi dönemi ve Namık Kemal okumaları üzerine özet tablo çıkarma.",
+                "testKitabi": "MEB 8. Sınıf İnkılap Tarihi LGS Testleri Sayfa 22-28 (Kazanım Testi 3)",
+                "soruSayisi": 25,
+                "ogretmenNotu": "Manastır, Selanik ve Şam şehirlerinin Mustafa Kemal'in fikir dünyasına katkılarını eşleştiriniz.",
+                "teslimTarihi": "1 Ekim 2026"
+              },
+              "isLgsKritik": true,
+              "kavramYanilgisi": {
+                "baslik": "⚠️ Şehirlerin Fikir Dünyasına Etkilerinin Karıştırılması",
+                "aciklama": "Selanik, Manastır, İstanbul ve Şam şehirlerinin Mustafa Kemal'e kazandırdığı nitelikler birbirine karıştırılabilmektedir.",
+                "dogrusu": "Selanik: Çok uluslu yapı ve Batı'ya açılan liman. Manastır: Tarih bilinci ve milliyetçilik. İstanbul: Ülke siyaseti. Şam: Vatan ve Hürriyet Cemiyeti (liderlik)."
+              },
+              "lgsVurgusu": {
+                "onemDerecesi": "Kritik",
+                "soruTipi": "Kişilik Özelliği Eşleştirme & Harita/Metin Yorumlama",
+                "cozumIpuclari": [
+                  "1. Kural: Askeri dehası, ileri görüşlülüğü ve vatanseverliği metindeki eylemlerle eşleştirin.",
+                  "2. Kural: Türk yazarlardan milliyetçilik, yabancı yazarlardan eşitlik fikirlerini almıştır."
+                ],
+                "ornekSoruAnalizi": "LGS İnkılap Tarihi testinde 1. soru daima Mustafa Kemal'in fikir dünyasından gelir."
+              }
+            }
+          ]
+        },
+        {
+          "dersAdi": "İngilizce",
+          "haftalikSaat": 4,
+          "ogretmen": "Canan Şahin",
+          "plan": [
+            {
+              "hafta": 4,
+              "ay": "Eylül",
+              "unite": "Unit 1: Friendship",
+              "konu": "Personal Qualities, Making Invitations & Giving Reasons",
+              "kazanimKodu": "İNG.8.1.2",
+              "kazanimBasligi": "Students will be able to accept and refuse invitations giving reasons.",
+              "maarifCiktisi": "Dürüstlük ve güvenilirlik değerleri üzerinden dostluk ilişkilerini ifade eder, nezaketle davetleri yanıtlar.",
+              "erdemDeger": "Dürüstlük & Vefa",
+              "beceriAlani": "Sosyo-Duygusal Beceriler",
+              "surecOdakliDegerlendirme": "İngilizce mazeret ve davet mektubu rubriği.",
+              "ogretmenTavsiyesi": {
+                "gorev": "Bir arkadaşına hafta sonu için sinema daveti ve mazeret mektubu yazma.",
+                "testKitabi": "MEB 8th Grade English LGS Master Test Page 18-24",
+                "soruSayisi": 20,
+                "ogretmenNotu": "'I'd love to, but I can't because...' kalıbına dikkat ediniz.",
+                "teslimTarihi": "29 Eylül 2026"
+              }
+            }
+          ]
+        },
+        {
+          "dersAdi": "Din Kültürü ve Ahlak Bilgisi",
+          "haftalikSaat": 2,
+          "ogretmen": "Mustafa Koç",
+          "plan": [
+            {
+              "hafta": 4,
+              "ay": "Eylül",
+              "unite": "Kader İnancı",
+              "konu": "İnsanın İradesi, Özgürlüğü ve Sorumluluğu",
+              "kazanimKodu": "DİN.8.1.2",
+              "kazanimBasligi": "İnsanın ilmi, iradesi, sorumluluğu ile kader arasında ilişki kurar.",
+              "maarifCiktisi": "Kendi eylemlerinin sorumluluğunu üstlenerek kaderi bahane etmeden çalışkan ve dürüst olmayı ilke edinir.",
+              "erdemDeger": "Sorumluluk & Dürüstlük",
+              "beceriAlani": "Kavramsal ve Ahlaki Muhakeme",
+              "surecOdakliDegerlendirme": "Tevekkül ve sorumluluk kompozisyon değerlendirme formu.",
+              "ogretmenTavsiyesi": {
+                "gorev": "Tevekkül ve sorumluluk kavramları arasındaki farkı açıklayan 1 sayfalık kompozisyon.",
+                "testKitabi": "MEB 8. Sınıf Din Kültürü LGS Hazırlık Testi Sayfa 15-20",
+                "soruSayisi": 20,
+                "ogretmenNotu": "Cüzi irade ile külli irade arasındaki farkı iyi kavrayınız.",
+                "teslimTarihi": "28 Eylül 2026"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
