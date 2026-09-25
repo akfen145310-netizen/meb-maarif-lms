@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "build-apk": "node scripts/build_sample_apk.mjs",
+    "sync-github": "node scripts/github_uploader.mjs"
   },
   "dependencies": {
     "browser-image-compression": "^2.0.2",

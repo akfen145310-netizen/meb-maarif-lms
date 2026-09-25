@@ -1,6 +1,27 @@
 import fs from "fs";
 import path from "path";
 
+// Read .env.local if present
+function loadEnv() {
+  const envPath = path.resolve(".env.local");
+  if (fs.existsSync(envPath)) {
+    const lines = fs.readFileSync(envPath, "utf-8").split("\n");
+    for (const line of lines) {
+      const trimmed = line.trim();
+      if (!trimmed || trimmed.startsWith("#")) continue;
+      const eqIdx = trimmed.indexOf("=");
+      if (eqIdx > 0) {
+        const key = trimmed.slice(0, eqIdx).trim();
+        const val = trimmed.slice(eqIdx + 1).trim().replace(/^["']|["']$/g, "");
+        if (!process.env[key]) {
+          process.env[key] = val;
+        }
+      }
+    }
+  }
+}
+loadEnv();
+
 const IGNORED_DIRS = new Set([
   "node_modules",
   ".next",
@@ -35,7 +56,17 @@ function getAllFiles(dir, baseDir = dir) {
   return results;
 }
 
-export async function uploadToGitHub({ token, repoName, isPrivate = false, description = "MEB Maarif LMS - Türkiye Yüzyılı Maarif Modeli Dijital Sınıf Defteri & Portal" }) {
+export async function uploadToGitHub({
+  token = process.env.GITHUB_TOKEN,
+  repoName = process.env.GITHUB_REPO || "meb-maarif-lms",
+  commitMessage = "fix(apk): Tam 14.2 MB Android APK paketi ve indirme düzeltmesi",
+  isPrivate = false,
+  description = "MEB Maarif LMS - Türkiye Yüzyılı Maarif Modeli Dijital Sınıf Defteri & Portal",
+} = {}) {
+  if (!token) {
+    throw new Error("GitHub token bulunamadı! Lütfen GITHUB_TOKEN çevre değişkenini veya parametresini sağlayın.");
+  }
+
   const headers = {
     Authorization: `Bearer ${token.trim()}`,
     Accept: "application/vnd.github+json",
@@ -53,7 +84,7 @@ export async function uploadToGitHub({ token, repoName, isPrivate = false, descr
   const owner = user.login;
   console.log(`✅ Doğrulandı: @${owner} (${user.name || owner})`);
 
-  console.log(`📦 '${repoName}' deposu kontrol ediliyor / oluşturuluyor...`);
+  console.log(`📦 '${repoName}' deposu kontrol ediliyor...`);
   let repoRes = await fetch(`https://api.github.com/repos/${owner}/${repoName}`, { headers });
   if (repoRes.status === 404) {
     const createRes = await fetch("https://api.github.com/user/repos", {
@@ -71,20 +102,33 @@ export async function uploadToGitHub({ token, repoName, isPrivate = false, descr
       throw new Error(`Depo oluşturulamadı: ${err}`);
     }
     console.log(`✅ Depo başarıyla oluşturuldu: https://github.com/${owner}/${repoName}`);
-    // Wait 2s for GitHub to initialize
     await new Promise((r) => setTimeout(r, 2000));
   } else if (repoRes.ok) {
-    console.log(`ℹ️ '${repoName}' deposu zaten mevcut, mevcut depoya yükleme yapılacak.`);
+    console.log(`ℹ️ '${repoName}' deposu mevcut. Değişiklikler senkronize ediliyor.`);
+  }
+
+  // Get current main commit SHA to link as parent
+  let parentCommitSha = null;
+  const currentRefRes = await fetch(`https://api.github.com/repos/${owner}/${repoName}/git/refs/heads/main`, { headers });
+  if (currentRefRes.ok) {
+    const currentRefData = await currentRefRes.json();
+    parentCommitSha = currentRefData.object.sha;
+    console.log(`🔗 Mevcut ana commit: ${parentCommitSha.slice(0, 7)}`);
   }
 
   const projectRoot = path.resolve(".");
   const files = getAllFiles(projectRoot);
-  console.log(`📂 Toplam ${files.length} proje dosyası taranıyor ve GitHub Blobları hazırlanıyor...`);
+  console.log(`📂 Toplam ${files.length} dosya taranıyor ve GitHub Blobları hazırlanıyor...`);
 
   const treeItems = [];
   let count = 0;
   for (const f of files) {
     const content = fs.readFileSync(f.fullPath);
+    const sizeMb = (content.length / (1024 * 1024)).toFixed(2);
+    if (content.length > 5 * 1024 * 1024) {
+      console.log(`\n📦 Büyük dosya yükleniyor: ${f.relPath} (${sizeMb} MB)...`);
+    }
+
     const base64 = content.toString("base64");
 
     const blobRes = await fetch(`https://api.github.com/repos/${owner}/${repoName}/git/blobs`, {
@@ -97,7 +141,7 @@ export async function uploadToGitHub({ token, repoName, isPrivate = false, descr
     });
 
     if (!blobRes.ok) {
-      console.warn(`⚠️ Dosya blob yüklenemedi: ${f.relPath}`);
+      console.warn(`⚠️ Dosya blob yüklenemedi: ${f.relPath} (${blobRes.status} ${await blobRes.text()})`);
       continue;
     }
 
@@ -113,7 +157,7 @@ export async function uploadToGitHub({ token, repoName, isPrivate = false, descr
       process.stdout.write(`⏳ İlerleme: ${count}/${files.length} dosya yüklendi...\r`);
     }
   }
-  console.log(`\n✅ ${treeItems.length} dosya blob'u GitHub'a başarıyla aktarıldı.`);
+  console.log(`\n✅ ${treeItems.length} dosya blob'u GitHub'a aktarıldı.`);
 
   console.log("🌳 Git Ağacı (Tree) oluşturuluyor...");
   const treeRes = await fetch(`https://api.github.com/repos/${owner}/${repoName}/git/trees`, {
@@ -125,13 +169,18 @@ export async function uploadToGitHub({ token, repoName, isPrivate = false, descr
   const treeData = await treeRes.json();
 
   console.log("📌 Git Commit oluşturuluyor...");
+  const commitBody = {
+    message: commitMessage,
+    tree: treeData.sha,
+  };
+  if (parentCommitSha) {
+    commitBody.parents = [parentCommitSha];
+  }
+
   const commitRes = await fetch(`https://api.github.com/repos/${owner}/${repoName}/git/commits`, {
     method: "POST",
     headers,
-    body: JSON.stringify({
-      message: "feat: MEB Maarif LMS v2026.2 - Vercel & APK Mobil Hazır İlk Sürüm",
-      tree: treeData.sha,
-    }),
+    body: JSON.stringify(commitBody),
   });
   if (!commitRes.ok) throw new Error(`Git commit oluşturulamadı: ${await commitRes.text()}`);
   const commitData = await commitRes.json();
@@ -147,7 +196,6 @@ export async function uploadToGitHub({ token, repoName, isPrivate = false, descr
   });
 
   if (!refRes.ok) {
-    // If ref doesn't exist, create it
     const createRefRes = await fetch(`https://api.github.com/repos/${owner}/${repoName}/git/refs`, {
       method: "POST",
       headers,
@@ -160,17 +208,20 @@ export async function uploadToGitHub({ token, repoName, isPrivate = false, descr
   }
 
   const repoUrl = `https://github.com/${owner}/${repoName}`;
-  console.log(`\n🎉 TEBRİKLER! Proje GitHub'a başarıyla yüklendi: ${repoUrl}`);
-  return { owner, repoName, repoUrl };
+  console.log(`\n🎉 TEBRİKLER! Tüm değişiklikler GitHub'a başarıyla aktarıldı: ${repoUrl}`);
+  console.log(`📌 Commit SHA: ${commitData.sha}`);
+  return { owner, repoName, repoUrl, commitSha: commitData.sha };
 }
 
 // CLI direct run
-if (process.argv[1] && process.argv[1].endsWith("github_uploader.mjs") && process.argv[2]) {
-  const token = process.argv[2];
-  const repoName = process.argv[3] || "meb-maarif-lms";
-  uploadToGitHub({ token, repoName })
+if (process.argv[1] && process.argv[1].endsWith("github_uploader.mjs")) {
+  const token = process.argv[2] || process.env.GITHUB_TOKEN;
+  const repoName = process.argv[3] || process.env.GITHUB_REPO || "meb-maarif-lms";
+  const msg = process.argv[4] || "fix(apk): Tam 14.2 MB Android APK paketi ve indirme düzeltmesi";
+
+  uploadToGitHub({ token, repoName, commitMessage: msg })
     .then((res) => {
-      console.log("TAMAMLANDI:", res);
+      console.log("TAMAMLANDI:", res.repoUrl);
       process.exit(0);
     })
     .catch((err) => {
